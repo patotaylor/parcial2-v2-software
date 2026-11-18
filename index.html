@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestión de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido al Gestor de Tareas</h1>
+    <p>Aplicación del segundo parcial de Ingeniería de Software.</p>
+
+    <h2>Mis tareas</h2>
+    <ul id="lista">
+        <li>Estudiar Git</li>
+        <li>Practicar Docker</li>
+    </ul>
+
+    <input id="tarea" placeholder="Nueva tarea">
+    <button onclick="agregarTarea()">Agregar</button>
+
+    <script>
+        function agregarTarea() {
+            const input = document.getElementById("tarea");
+            const texto = input.value.trim();
+
+            if (texto === "") return;
+
+            const li = document.createElement("li");
+            li.textContent = texto;
+
+            document.getElementById("lista").appendChild(li);
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
